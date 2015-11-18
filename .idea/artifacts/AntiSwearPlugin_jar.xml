@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AntiSwearPlugin:jar">
+    <output-path>$USER_HOME$/Desktop/Server/plugins</output-path>
+    <root id="archive" name="AntiSwearPlugin.jar">
+      <element id="module-output" name="AntiSwearPlugin" />
+    </root>
+  </artifact>
+</component>

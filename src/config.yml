@@ -1,0 +1,21 @@
+#Welcome to the config file of AntiSwearPlugin.
+#This plugin is developed by Lightcab.
+
+#Set the value of bannedWords to the words that you don't want to be said on your server.
+#Simply add another - <word> to add another word.
+bannedWords:
+ -
+ -
+ -
+
+#Set the value of displayChat to true if you want the chat to be displayed after being censored.
+#Set the value of displayChat to false if you don't want to display the chat of the player if s/he swears.
+displayChat: true
+
+#If displayChat is true, set the value of replaceMessage to the message that is going to replace the message.
+#Note: It will not work if displayChat is false.
+replaceMessage: <3
+
+#If displayChat is false, set the value of sendMessage to the message that you want to send the player if s/he swears.
+#Note: It will not work if displayChat is true.
+sendMessage: Hey! Don't swear.
