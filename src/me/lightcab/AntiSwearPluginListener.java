@@ -20,11 +20,12 @@ public class AntiSwearPluginListener implements Listener {
         String message = e.getMessage().toLowerCase();
         for (String x : plugin.getConfig().getStringList("bannedWords")) {
             if (message.contains(x.toLowerCase())) {
-                if (plugin.getConfig().getBoolean("displayChat")) {
-                    e.setMessage(plugin.getConfig().getString("replaceMessage"));
-                } else {
-                    e.setCancelled(true);
-                    p.sendMessage(ChatColor.GREEN + "AntiSwear> " + ChatColor.WHITE + plugin.getConfig().getString("sendMessage"));
+                if (plugin.getConfig().getBoolean("warnPlayer")) {
+                    p.sendMessage(ChatColor.GREEN + "AntiSwear> " + ChatColor.WHITE + plugin.getConfig().getString("replaceMessage"));
+                }
+                e.setMessage(plugin.getConfig().getString("replaceMessage"));
+                if (plugin.getConfig().getBoolean("setFire")) {
+                    p.setFireTicks(plugin.getConfig().getInt("fireSecond") * 20);
                 }
             }
 
