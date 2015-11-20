@@ -23,4 +23,4 @@ warnMessage:
 setFire: true
 
 #Set the value of fireSecond to the amount of seconds you want the player to be on fire.
-fireSecond:
+fireSecond: 2
