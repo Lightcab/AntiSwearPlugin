@@ -8,34 +8,22 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 public class AntiSwearPluginListener implements Listener {
 
-
     AntiSwearPluginMain plugin;
-
-    public AntiSwearPluginListener(AntiSwearPluginMain instance) {
-        this.plugin = instance;
-    }
 
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
-        boolean playerhasCursed = false;
         String message = e.getMessage().toLowerCase();
         for (String x : plugin.getConfig().getStringList("bannedWords")) {
             if (message.contains(x.toLowerCase())) {
-                playerhasCursed = true;
+                e.setMessage(plugin.getConfig().getString("replaceMessage"));
+                if (plugin.getConfig().getBoolean("warnPlayer")) {
+                    p.sendMessage(ChatColor.GREEN + "AntiSwear> " + ChatColor.WHITE + plugin.getConfig().getString("warnMessage"));
+                }
+                if (plugin.getConfig().getBoolean("setFire")) p.setFireTicks(plugin.getConfig().getInt("fireSecond") * 20);
+                break;
             }
 
         }
-        if (playerhasCursed) {
-            e.setMessage(plugin.getConfig().getString("replaceMessage"));
-            if (plugin.getConfig().getBoolean("warnPlayer")) {
-                p.sendMessage(ChatColor.GREEN + "AntiSwear> " + ChatColor.WHITE + plugin.getConfig().getString("warnMessage"));
-            }
-            if (plugin.getConfig().getBoolean("setFire")) {
-                p.setFireTicks(plugin.getConfig().getInt("fireSecond") * 20);
-            }
-
-        }
-
     }
 }
