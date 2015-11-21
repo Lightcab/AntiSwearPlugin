@@ -18,15 +18,15 @@ public class AntiSwearPluginListener implements Listener {
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
-        boolean playerhasSweared = false;
+        boolean playerhasCursed = false;
         String message = e.getMessage().toLowerCase();
         for (String x : plugin.getConfig().getStringList("bannedWords")) {
             if (message.contains(x.toLowerCase())) {
-                playerhasSweared = true;
+                playerhasCursed = true;
             }
 
         }
-        if (playerhasSweared) {
+        if (playerhasCursed) {
             e.setMessage(plugin.getConfig().getString("replaceMessage"));
             if (plugin.getConfig().getBoolean("warnPlayer")) {
                 p.sendMessage(ChatColor.GREEN + "AntiSwear> " + ChatColor.WHITE + plugin.getConfig().getString("warnMessage"));
