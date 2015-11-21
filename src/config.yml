@@ -19,7 +19,7 @@ warnPlayer: false
 #Note: It is only going to be used if you have set warnPlayer to true.
 warnMessage:
 
-#Set the value of setFire true if you want to set the player on fire if s/he tells the banned word.
+#Set the value of setFire true if you want to set the player on fire if s/he tells the banned word false if you don't want to do so.
 setFire: true
 
 #Set the value of fireSecond to the amount of seconds you want the player to be on fire.
