@@ -8,10 +8,9 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 public class AntiSwearPluginListener implements Listener {
 
-    AntiSwearPluginMain plugin;
-
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent e) {
+        AntiSwearPluginMain plugin = AntiSwearPluginMain.instance;
         Player p = e.getPlayer();
         String message = e.getMessage().toLowerCase();
         for (String x : plugin.getConfig().getStringList("bannedWords")) {
