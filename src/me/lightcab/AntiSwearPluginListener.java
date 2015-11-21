@@ -7,10 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 public class AntiSwearPluginListener implements Listener {
-
-
     AntiSwearPluginMain plugin;
-    private boolean aBoolean;
 
     public AntiSwearPluginListener(AntiSwearPluginMain instance) {
         this.plugin = instance;
