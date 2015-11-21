@@ -34,11 +34,7 @@ public class AntiSwearPluginListener implements Listener {
             if (plugin.getConfig().getBoolean("setFire")) {
                 p.setFireTicks(plugin.getConfig().getInt("fireSecond") * 20);
             }
-            if (plugin.getConfig().getBoolean("strikeLightning")) {
-                for (int loopNumber = 0; loopNumber < plugin.getConfig().getInt("lightningNumber"); loopNumber++) {
-                    p.getLocation().getWorld().strikeLightning(p.getLocation());
-                }
-            }
+
         }
 
     }
