@@ -7,14 +7,7 @@ public class AntiSwearPluginMain extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getLogger().info("The plugin has been enabled!");
         saveDefaultConfig();
         getServer().getPluginManager().registerEvents(new AntiSwearPluginListener(this), this);
     }
-
-    @Override
-    public void onDisable() {
-        getLogger().info("The plugin has been disabled!");
-    }
-
 }
